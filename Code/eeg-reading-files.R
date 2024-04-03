@@ -7,7 +7,7 @@ library(stringr) # For string manipulation
 
 ####### READING EEG DATA #######
 # Set the working directory to where your files are located
-setwd("/Users/amb/Documents/1_Projects/11_EcoSleepProject/Data/eeg/derived/derived-all/stats")
+setwd("your/filepath")
 
 # List all files in the directory
 files <- list.files(pattern = "\\.csv$") # Adjust pattern based on your file type
