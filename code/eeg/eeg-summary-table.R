@@ -7,10 +7,10 @@ library(stringr) # For string manipulation
 library(gt) #For nice tables
 
 #load file from folder
-setwd("/yourfilpath")
+setwd("/Users/amb/Documents/1_Projects/11_EcoSleepProject/Data/eeg/derived/derived-all/stats")
 
 # read EEG data from folder
-eeg_data <- read_csv("yyyy.mm.dd.eeg_data.csv")
+eeg_data <- read_csv("2024.04.02.eeg_data.csv")
 
 
 ####### DESCRIPTIVE EEG STATS grouped by ID #######
@@ -124,6 +124,10 @@ wide_format_stats_by_night <- wide_format_stats_by_night %>%
 #only select nights 1 and 2 since night 3 was only in one participant
 wide_format_stats_filtered <- wide_format_stats_by_night %>%
   filter(night_number != 3)
+
+#Save this output
+wide_format_stats_filtered
+write_csv(wide_format_stats_filtered, "wide_format_stats_filtered")
 
 gt_table_by_night <- wide_format_stats_filtered %>%
   gt() %>%
